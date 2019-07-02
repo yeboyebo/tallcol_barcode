@@ -1,0 +1,24 @@
+{
+    "name": "tallcol_barcode",
+    "modifications": {
+        "patchJson": [
+            {
+                "name": "urls.json",
+                "path": "config/"
+            },
+            {
+                "name": "registros.json",
+                "path": "config/"
+            }
+        ],
+        "addFile": [],
+        "replaceFile": [
+            {
+                "name": "dependencias.json",
+                "path": "config/"
+            }
+        ],
+        "deleteFile": [],
+        "patchScript": []
+    }
+}
