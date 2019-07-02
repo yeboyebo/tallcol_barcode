@@ -1,10 +1,14 @@
 {
+	"fun_aq": "tallcol_barcode",
+    "fk": "True",
     "dependencias": [
         {
             "version": "v1.0",
             "key": "baseparche"
+        },
+        {
+            "key": "flfacturac",
+            "version": "v1.0"
         }
-    ],
-    "fun_aq": null,
-    "fk": "True"
+    ]
 }

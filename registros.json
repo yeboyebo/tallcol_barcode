@@ -1,3 +1,39 @@
 {
-    "modifications": []
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/flfactalma/stocks",
+            "value": {
+                "tallas": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/flfactalma/tallas",
+            "value": {
+                "colores": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/flfactalma/colores",
+            "value": {
+                "coloresarticulo": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/flfactalma/coloresarticulo",
+            "value": {
+                "tallasarticulo": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/flfactalma/tallasarticulo",
+            "value": {
+                "atributosarticulos": null
+            }
+        }
+    ]
 }
