@@ -102,11 +102,6 @@
                     "icon": "delete"
                 }
             }
-        },
-        {
-            "type": "deleteNode",
-            "path": "/drawIf",
-            "value": null
         }
     ]
 }
