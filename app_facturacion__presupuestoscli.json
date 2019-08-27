@@ -1,0 +1,309 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/initValidation/root",
+            "value": {
+                "error": {
+                    "msg": "Presupuesto incorrecto"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/schema/root",
+            "value": {
+                "lineaspresupuestoscli": {
+                    "rel": "idpresupuesto",
+                    "querystring": {
+                        "p_l": 10,
+                        "p_c": 1
+                    }
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/root",
+            "value": {
+                "groupBoxPestanas": {
+                    "componente": "YBGroupBoxContainer",
+                    "className": "",
+                    "style": {},
+                    "layout": {
+                        "Cliente": {
+                            "componente": "YBGroupBox",
+                            "className": "",
+                            "style": {},
+                            "layout": {
+                                "presupuestoscliForm": {
+                                    "prefix": "presupuestoscli",
+                                    "componente": "YBForm",
+                                    "class": "claseGrid",
+                                    "submit": "update",
+                                    "saveReturn": true,
+                                    "return": true,
+                                    "send": true,
+                                    "success": [
+                                        {
+                                            "slot": "refrescar"
+                                        }
+                                    ],
+                                    "groupbox": "",
+                                    "fields": {
+                                        "gb__": {
+                                            "title": "",
+                                            "fields": {
+                                                "codcliente": {
+                                                    "disabled": true
+                                                },
+                                                "cifnif": {
+                                                    "disabled": true
+                                                }
+                                            }
+                                        },
+                                        "gb__Cliente": {
+                                            "title": "",
+                                            "fields": {
+                                                "direccion": {},
+                                                "dirnum": {},
+                                                "dirotros": {},
+                                                "codpostal": {},
+                                                "ciudad": {},
+                                                "provincia": {},
+                                                "codpais": {}
+                                            }
+                                        }
+                                    },
+                                    "exclude": {}
+                                }
+                            }
+                        },
+                        "Datos": {
+                            "componente": "YBGroupBox",
+                            "className": "",
+                            "style": {},
+                            "layout": {
+                                "articuosForm": {
+                                    "prefix": "presupuestoscli",
+                                    "componente": "YBForm",
+                                    "class": "claseGrid",
+                                    "submit": "update",
+                                    "saveReturn": true,
+                                    "return": true,
+                                    "send": true,
+                                    "success": [
+                                        {
+                                            "slot": "refrescar"
+                                        }
+                                    ],
+                                    "groupbox": "",
+                                    "fields": {
+                                        "gb__": {
+                                            "title": "",
+                                            "fields": {
+                                                "fecha": {},
+                                                "fechasalida": {},
+                                                "codagente": {
+                                                    "disabled": true
+                                                },
+                                                "recfinanciero": {},
+                                                "codalmacen": {},
+                                                "codpago": {},
+                                                "coddivisa": {},
+                                                "tasaconv": {},
+                                                "totaleuros": {
+                                                    "disabled": true
+                                                },
+                                                "regimeniva": {}
+                                            }
+                                        }
+                                    },
+                                    "exclude": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/groupBoxPestanas",
+            "value": {
+                "articuosForm": {
+                    "prefix": "presupuestoscli",
+                    "componente": "YBForm",
+                    "class": "claseGrid",
+                    "submit": "update",
+                    "send": false,
+                    "success": [
+                        {
+                            "slot": "refrescar"
+                        }
+                    ],
+                    "groupbox": "",
+                    "fields": {
+                        "gb__": {
+                            "title": "",
+                            "fields": {
+                                "neto": {
+                                    "disabled": true
+                                },
+                                "totaliva": {
+                                    "disabled": true
+                                },
+                                "totalirpf": {
+                                    "disabled": true
+                                },
+                                "totalrecargo": {
+                                    "disabled": true
+                                },
+                                "total": {
+                                    "disabled": true
+                                }
+                            }
+                        }
+                    },
+                    "exclude": {}
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/articuosForm",
+            "value": {
+                "masterlineaspresupuestoscli": {
+                    "componente": "YBTable",
+                    "label": "Lineas",
+                    "prefix": "lineaspresupuestoscli",
+                    "filter": "buscador",
+                    "columns": [
+                        {
+                            "tipo": "field",
+                            "listpos": "title",
+                            "key": "referencia",
+                            "width": 120
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": false,
+                            "key": "talla",
+                            "width": 60
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": false,
+                            "key": "color",
+                            "width": 60
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "body",
+                            "key": "cantidad",
+                            "width": 120
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "body",
+                            "key": "descripcion",
+                            "width": 400,
+                            "flex": 3
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "secondaryitem",
+                            "key": "pvpunitario"
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "secondaryitem",
+                            "key": "pvptotal"
+                        },
+                        {
+                            "tipo": "act",
+                            "key": "delete",
+                            "label": "Borrar Linea",
+                            "success": [
+                                {
+                                    "slot": "refrescar"
+                                }
+                            ]
+                        }
+                    ],
+                    "rowclick": "link",
+                    "accionesGrid": [
+                        {
+                            "key": "nuevaLinea",
+                            "label": "Nuevo",
+                            "success": []
+                        },
+                        {
+                            "key": "insertarTallas",
+                            "label": "Nuevo",
+                            "success": [
+                                {
+                                    "slot": "refrescar"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/acciones/root",
+            "value": {
+                "delete": {
+                    "action": "deleteRow",
+                    "icon": "delete"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/acciones/delete",
+            "value": {
+                "nuevaLinea": {
+                    "action": "newRow",
+                    "icon": "add_circle"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/acciones/nuevaLinea",
+            "value": {
+                "insertarTallas": {
+                    "action": "legacy",
+                    "label": "Inserta tallas",
+                    "prefix": "presupuestoscli",
+                    "serverAction": "lineasTallaColor",
+                    "icon": "add",
+                    "params": [
+                        {
+                            "tipo": 55,
+                            "componente": "YBFieldDB",
+                            "prefix": "otros",
+                            "rel": "articulos",
+                            "key": "referencia",
+                            "desc": "descripcion",
+                            "label": "referencia"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "deleteNode",
+            "path": "/focus",
+            "value": null
+        },
+        {
+            "type": "deleteNode",
+            "path": "/drawIf",
+            "value": null
+        }
+    ]
+}

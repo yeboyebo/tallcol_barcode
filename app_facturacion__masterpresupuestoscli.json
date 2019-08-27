@@ -1,0 +1,122 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/querystring/root",
+            "value": {
+                "p_l": 50
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/querystring/p_l",
+            "value": {
+                "p_c": true
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/querystring/p_c",
+            "value": {
+                "o_1": "-fecha"
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/querystring/o_1",
+            "value": {
+                "o_2": "-codigo"
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/querystring/o_2",
+            "value": {
+                "f_presupuestosUsuario": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/root",
+            "value": {
+                "masterPresupuestoscli": {
+                    "componente": "YBGrid",
+                    "label": "Presupuestos de venta",
+                    "prefix": "presupuestoscli",
+                    "filter": "buscador",
+                    "multiselectable": true,
+                    "colorRowField": "rowColor",
+                    "columns": [
+                        {
+                            "tipo": "field",
+                            "listpos": "title",
+                            "key": "codigo"
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "body",
+                            "key": "fecha"
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "subtitle",
+                            "key": "nombrecliente"
+                        },
+                        {
+                            "tipo": "field",
+                            "listpos": "secondaryitem",
+                            "key": "total"
+                        },
+                        {
+                            "tipo": "act",
+                            "key": "delete",
+                            "label": "Borrar Linea",
+                            "success": [
+                                {
+                                    "slot": "refrescar"
+                                }
+                            ]
+                        }
+                    ],
+                    "rowclick": "link"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/masterPresupuestoscli",
+            "value": {
+                "newRecordTelest": {
+                    "componente": "YBNewRecord",
+                    "class": "info",
+                    "icon": "add"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/acciones/root",
+            "value": {
+                "delete": {
+                    "action": "deleteRow",
+                    "icon": "delete"
+                }
+            }
+        },
+        {
+            "type": "deleteNode",
+            "path": "/initValidation",
+            "value": null
+        },
+        {
+            "type": "deleteNode",
+            "path": "/focus",
+            "value": null
+        },
+        {
+            "type": "deleteNode",
+            "path": "/drawIf",
+            "value": null
+        }
+    ]
+}

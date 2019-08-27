@@ -9,9 +9,82 @@
             {
                 "name": "registros.json",
                 "path": "config/"
+            },
+            {
+                "name": "app_facturacion__menu_facturacion.json",
+                "path": "apps/facturacion/templates/facturacion/"
+            },
+            {
+                "name": "app_facturacion__masterpresupuestoscli.json",
+                "path": "apps/facturacion/templates/facturacion/plantillas/"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__newrecordpresupuestoscli.json"
+            },
+            {
+                "path": "apps/portal/templates/portal/",
+                "name": "app_portal__menu_portal.json"
+            },
+            {
+                "name": "app_facturacion__newrecordlineaspresupuestoscli.json",
+                "path": "apps/facturacion/templates/facturacion/plantillas/"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__presupuestoscli.json"
             }
         ],
-        "addFile": [],
+        "addFile": [
+            {
+                "name": "model_flfactalma__tallas.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__tallas_def.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__colores.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__colores_def.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__coloresarticulo.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__coloresarticulo_def.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__tallasarticulo.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__tallasarticulo_def.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__atributosarticulos.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__atributosarticulos_def.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__lineastallacolcli.py",
+                "path": "models/flfactalma/"
+            },
+            {
+                "name": "model_flfactalma__lineastallacolcli_def.py",
+                "path": "models/flfactalma/"
+            }
+        ],
         "replaceFile": [
             {
                 "name": "dependencias.json",
@@ -19,6 +92,27 @@
             }
         ],
         "deleteFile": [],
-        "patchScript": []
+        "patchScript": [
+            {
+                "name": "model_flfacturac__albaranescli.py",
+                "path": "models/flfacturac/"
+            },
+            {
+                "name": "model_flfacturac__albaranescli_def.py",
+                "path": "models/flfacturac/"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__presupuestoscli_def.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__presupuestoscli.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__flfacturac_def.py"
+            }
+        ]
     }
 }

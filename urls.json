@@ -1,3 +1,51 @@
 {
-    "modifications": []
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/lineasregstocks",
+            "value": {
+                "tallas": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/tallas",
+            "value": {
+                "colores": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/colores",
+            "value": {
+                "coloresarticulo": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/coloresarticulo",
+            "value": {
+                "tallasarticulo": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/tallasarticulo",
+            "value": {
+                "atributosarticulos": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/atributosarticulos",
+            "value": {
+                "lineastallacolcli": null
+            }
+        },
+        {
+            "type": "deleteNode",
+            "path": "/models/flcontppal",
+            "value": null
+        }
+    ]
 }

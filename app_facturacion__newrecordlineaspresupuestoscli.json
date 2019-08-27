@@ -1,0 +1,100 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/root",
+            "value": {
+                "newRecordLineaspresupuestoscli": {
+                    "prefix": "lineaspresupuestoscli",
+                    "componente": "YBForm",
+                    "class": "claseGrid",
+                    "submit": "create",
+                    "success": [
+                        {
+                            "slot": "return"
+                        }
+                    ],
+                    "groupbox": "",
+                    "return": true,
+                    "fields": {
+                        "gb__articulo": {
+                            "title": "Artículo",
+                            "fields": {
+                                "referencia": {
+                                    "rel": "articulos",
+                                    "key": "referencia",
+                                    "desc": "descripcion"
+                                },
+                                "descripcion": {}
+                            }
+                        },
+                        "gb__atributo": {
+                            "title": "Atributos",
+                            "fields": {
+                                "barcode": {
+                                    "rel": "atributosarticulos",
+                                    "key": "barcode",
+                                    "function": "getBarCode",
+                                    "params": [
+                                        "referencia"
+                                    ]
+                                },
+                                "talla": {},
+                                "color": {}
+                            }
+                        },
+                        "gb__impuestos": {
+                            "title": "Impuestos",
+                            "fields": {
+                                "codimpuesto": {},
+                                "iva": {
+                                    "disabled": true
+                                },
+                                "recargo": {
+                                    "disabled": true
+                                },
+                                "irpf": {}
+                            }
+                        },
+                        "gb__cantidad": {
+                            "title": "Cantidad",
+                            "fields": {
+                                "cantidad": {},
+                                "pvpunitario": {},
+                                "pvpsindto": {
+                                    "disabled": true
+                                },
+                                "dtolineal": {},
+                                "dtopor": {},
+                                "gb__": {
+                                    "title": "",
+                                    "fields": {
+                                        "pvptotal": {
+                                            "disabled": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "exclude": {}
+                }
+            }
+        },
+        {
+            "type": "deleteNode",
+            "path": "/initValidation",
+            "value": null
+        },
+        {
+            "type": "deleteNode",
+            "path": "/focus",
+            "value": null
+        },
+        {
+            "type": "deleteNode",
+            "path": "/drawIf",
+            "value": null
+        }
+    ]
+}
