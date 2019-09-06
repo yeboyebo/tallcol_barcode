@@ -7,12 +7,14 @@ class tallcol_barcode(flfacturac):
         datos = ""
         sumCantidad = 0
         pvp = 0
+        iva = 0.0
+        recargo = 0.0
         descripcion = ""
         referencia = oParam['referencia']
         q = qsatype.FLSqlQuery()
         q.setTablesList(u"atributosarticulos")
-        q.setSelect(u"atributosarticulos.barcode,atributosarticulos.talla,atributosarticulos.color,articulos.pvp,articulos.descripcion")
-        q.setFrom(u"atributosarticulos inner join articulos on atributosarticulos.referencia = articulos.referencia")
+        q.setSelect(u"atributosarticulos.barcode,atributosarticulos.talla,atributosarticulos.color,articulos.pvp,articulos.descripcion,articulos.codimpuesto,impuestos.iva,impuestos.recargo")
+        q.setFrom(u"atributosarticulos inner join articulos on atributosarticulos.referencia = articulos.referencia inner join impuestos on articulos.codimpuesto = impuestos.codimpuesto")
         q.setWhere(u"atributosarticulos.referencia = '" + referencia + "'")
 
         if not q.exec_():
@@ -29,6 +31,8 @@ class tallcol_barcode(flfacturac):
                 sumCantidad += int(oParam[q.value("barcode")])
                 pvp = q.value("articulos.pvp")
                 descripcion = q.value("articulos.descripcion")
+                iva = q.value("impuestos.iva")
+                recargo = q.value("impuestos.recargo")
 
         datos = datos[:len(datos) - 1]
         curLineasTC = qsatype.FLSqlCursor(u"lineastallacolcli")
@@ -43,6 +47,8 @@ class tallcol_barcode(flfacturac):
         curLineasTC.setValueBuffer("referencia", referencia)
         curLineasTC.setValueBuffer("cantidad", sumCantidad)
         curLineasTC.setValueBuffer("pvpunitario", pvp)
+        curLineasTC.setValueBuffer("iva", iva)
+        curLineasTC.setValueBuffer("recargo", recargo)
         curLineasTC.setValueBuffer("datos", datos)
 
         if not curLineasTC.commitBuffer():
