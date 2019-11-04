@@ -39,7 +39,8 @@ class tallcol_barcode(flfacturac):
                         "verbose_name": q.value("atributosarticulos.talla") + " - " + q.value("atributosarticulos.color"),
                         "key": q.value("atributosarticulos.barcode"),
                         "value": cantidad,
-                        "validaciones": None
+                        "validaciones": None,
+                        "className": "col-sm-4"
                     })
                 response['params'].append({
                         "tipo": 56,
